@@ -23,10 +23,13 @@ public class BoxProxyMrMeeseeks {
     }
 
     private MrMeeseeks createMrMeeseeks(){
-
+        //no se hace el if porque siempre se hace aqui uno nuevo
+        return new MrMeeseeks();
     }
 
     public void pushButton(Collection<MrMeeseeks> setMrMe) {
+        // pasa coleccion y hay que añadir un mr a la colección
+        setMrMe.add(createMrMeeseeks());
     }
 
 
