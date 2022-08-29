@@ -28,7 +28,7 @@ public class App {
         /**
          *  Lista desordenada con las ids de los Mr Meeseeks
          *  Utilizo un ArrayList y no un conjunto para acceder
-         *  por posicion y simular que los Mr Meeseeks terminan su tarea
+         *  por posición y simular que los Mr Meeseeks terminan su tarea
          *  en distinto orden al que son creados.
          */
         ArrayList<Integer> ids = new ArrayList<Integer>();
