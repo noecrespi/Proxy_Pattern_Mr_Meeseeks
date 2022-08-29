@@ -6,33 +6,49 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MrMeeseeks {
 
-    // 1 crear la clase
-    //2 crear los atributos
+
+
+    //ATRIBUTO CONSTANTE
+// inicializamos y decimoa que empiece a partir del número mil
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 
     // ATRIBUTOS
-    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
     private Integer Id;
     private String messageOnRequest;
     private String messageOnDone;
     private String messageOnExplore;
-    // lista de string []
+    // lista llamda request que contiene string[]
+    //string[] -> otra forma de llamar a las listas
     private String[] request;
+    //lista llamanda requetAsList que contiene Strings
     private List<String> requetAsList;
 
+    //contructor
     public MrMeeseeks(){
         Id = ID_GENERATOR.incrementAndGet();
+        sayMessageOnCreate();
     }
 
-    //Contructores
+    //Método
     public Integer getId() {
         return Id;
     }
 
-    // esta mal, no lo entiendo
+    private void sayMessageOnCreate(){
+        System.out.println("I'm Mr Meeseeks " + getId() + ". Look at meeee!") ;
+    }
+
+    @Override
+    public String toString() {
+        // tenemos que pasar un String el id pero el id es un número numerioco tenemos que ...
+        return getId().toString();
+    }
 
     private String getMessageOnRequest(int numMessageOnRequest){
         return messageOnRequest;
     }
+
+
     
     public void formulateRequest(String request){}
 
