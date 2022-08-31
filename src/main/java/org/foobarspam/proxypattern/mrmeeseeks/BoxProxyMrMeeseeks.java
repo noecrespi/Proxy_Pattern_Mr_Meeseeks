@@ -7,15 +7,17 @@ import java.util.NavigableSet;
 public class BoxProxyMrMeeseeks {
 
 
-    // atributo
-    // declara un objeto
+    // Atributo
+    // declara un objeto que es instanciado de la clase BoxProxyMrMeeseeks
     private static BoxProxyMrMeeseeks instanceBox;
 
-    // ctructor
+    // Constructor
     private BoxProxyMrMeeseeks(){};
 
 
     public static BoxProxyMrMeeseeks getInstanceBox() {
+        // Creamos un condional por para asegurarnos que el atributo exista siempre
+        // si el atributo no estaba creado con este condicional creamos un nuevo instanceBox
         if(instanceBox == null) {
             instanceBox = new BoxProxyMrMeeseeks();
         }
@@ -23,13 +25,13 @@ public class BoxProxyMrMeeseeks {
     }
 
     private MrMeeseeks createMrMeeseeks(){
-        //no se hace el if porque siempre se hace aqui uno nuevo
         return new MrMeeseeks();
     }
 
     public void pushButton(Collection<MrMeeseeks> setMrMe) {
         // pasa coleccion y hay que añadir un mr a la colección
-        setMrMe.add(createMrMeeseeks());
+        MrMeeseeks newMrMeeseeks = createMrMeeseeks();
+        setMrMe.add(newMrMeeseeks);
     }
 
 
