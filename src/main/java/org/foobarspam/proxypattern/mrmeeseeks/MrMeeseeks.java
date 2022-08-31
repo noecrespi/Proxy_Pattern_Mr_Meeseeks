@@ -55,9 +55,9 @@ public class MrMeeseeks {
         return messageOnRequest;
     }
 
-
+    // printar las dos request (en este caso las dos primeras frases)
     private void setRequest(String request){
-        //split lista...
+        //split divide un objeto de tipo String en un array de cadenas mediante la separación de la cadena en subcadenas
         this.request = request.split(" ");
         this.requetAsList = Arrays.asList(this.request);
     }
@@ -95,12 +95,24 @@ public class MrMeeseeks {
         System.out.println("All done!");
     }
 
-    // all done private se ejecuta "say message on done"
-    // oh ye se ejecuta en say "message on request" ejecita un metodo llamado getmessage on request y te devuelve un
-    // mensaje random entre dos
-
-    // este método tiene que seleccionar una frase random de la request
+    // este método tiene que seleccionar una de las dos frases de la request
     public void sayMessageOnRequest(){
+        // variables de los mensajes que queremos mostrar
+        String ohYea = "Oh, yeah!";
+        String canDo = " Can do!";
+        String yesMaAm = ", Yes ma 'am!";
 
+        //creamos una lista con las posibles respuesta de esta request
+        ArrayList<String> message = new ArrayList<String>();
+        message.add(canDo);
+        message.add(yesMaAm);
+
+        // buscará un objeto random de la lista y lo printeará
+        for (int i = 1; i < message.size(); i++){
+            int index = (int)(Math.random() * message.size());
+
+            // printear el request
+            System.out.println(ohYea + message.get(index));
+        }
     }
 }
